@@ -1,0 +1,17 @@
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+
+import en from "./Languages/english/translation.json";
+import tr from "./Languages/turkish/translation.json";
+
+i18n.use(initReactI18next).init({
+  resources: {
+    en: { translation: en },
+    tr: { translation: tr },
+  },
+  lng: "en", // default language
+  fallbackLng: "en",
+  interpolation: { escapeValue: false },
+});
+
+export default i18n;
