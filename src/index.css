@@ -9,12 +9,19 @@
   --color-grayLight: #1f1f1f;
   --color-grayLight2: #2a2a2a;
   --color-golden: #CDAC4F;
-  --color-gold: "#f5c56b";
+  --color-gold: #f5c56b;
+  --color-yellowColor: #FFEE58;
+  --color-blue1: #6c4be0;
+  --color-blue2: #3f1f99;
+  --color-blue3: #5530b3;
+  --color-purbleDark: #4a1f4f;
 
 
  /* Gradient colors define karo - individual colors ke taur par */
   --color-yellow-start: #facc15;
   --color-yellow-end: #ca8a04;
+  --color-purple-start: #1a0033;
+  --color-purple-end: #2d0052;
 
   /* Typography */
 
@@ -94,4 +101,65 @@ select:-webkit-autofill {
   animation: reelSpin 0.4s ease-out;
 }
 
+/* @keyframes reelGradient {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+
+.dynamic-reel-bonusGame-bg {
+  background: linear-gradient(
+    to bottom,
+    #ffd28a,
+    #f0b35c,
+    #c9823a,
+    #5a2e14
+  );
+  background-size: 100% 200%;
+  animation: reelGradient 4s ease-in-out infinite;
+} */
+
+/* bouns game  */
+ @keyframes luxuryFlow {
+  0% {
+    background-position: 50% 0%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 50% 0%;
+  }
+}
+
+.dynamic-reel-bonusGame-bg {
+  background: linear-gradient(
+    180deg,
+    #ffdd9e,
+    #f5b860,
+    #c9823a,
+    #6a3a1c
+  );
+  background-size: 100% 300%;
+  animation: luxuryFlow 8s ease-in-out infinite;
+}
+
+/* gate of olympus */
+@keyframes skyMove {
+  0% { background-position: 50% 0%; }
+  50% { background-position: 50% 100%; }
+  100% { background-position: 50% 0%; }
+}
+
+.dynamic-GooGame-bg {
+  background: radial-gradient(circle at top, #8f7ad8, #5a3d99, #2b174f);
+  background-size: 100% 200%;
+  animation: skyMove 6s ease-in-out infinite;
+}
 

@@ -5,46 +5,31 @@ import JackpotBar from "./Component/Jackpot";
 import ControlPanel from "./Component/ControlPanel";
 import SlotGrid from "./Component/SlotGrid";
 import MenuModal from "./Component/MenuModal";
+import GameHeader from "./Component/GameHeader";
 // Main Component
-export default function PyramidSlot() {
+export default function Bouns() {
   const { reels, spinning, spin, bet, setBet, winAmount } = useSlotMachine();
     const [menuOpen, setMenuOpen] = useState(false);
     const [sound, setSound] = useState(true);
     const [music, setMusic] = useState(true);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-purple-start via-purple-end to-[#000] flex justify-center items-center p-4">
+    <div className="min-h-screen bg-gradient-to-b from-purple-start via-purple-start to-[#000] flex justify-center items-center p-1">
       <div className="w-full max-w-[500px] text-white relative">
         {/* Header */}
-        <div className="flex items-center justify-between px-4 py-4 bg-gradient-to-r from-purple-900 via-indigo-900 to-purple-900 rounded-t-2xl shadow-xl">
-          <button className="text-2xl hover:scale-110 transition-transform">
-            ⬅
-          </button>
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-600 bg-clip-text text-transparent">
-            PYRAMID SLOTS
-          </h1>
-          {/* MENU BUTTON */}
-          <button
-            onClick={() => setMenuOpen(true)}
-            className="text-2xl hover:scale-110 transition-transform"
-          >
-            ☰
-          </button>
-        </div>
 
-        {/* Jackpot */}
-        <JackpotBar />
+        <GameHeader setMenuOpen={setMenuOpen} menuOpen={menuOpen} />
 
         {/* Slot Grid */}
         <SlotGrid reels={reels} spinning={spinning} />
 
         {/* Controls */}
         <ControlPanel
-          spin={spin}
-          spinning={spinning}
-          bet={bet}
-          setBet={setBet}
-          winAmount={winAmount}
+          bet={100}
+          balance={0}
+          onSpin={spin}
+          onInc={() => setBet((b) => b + 10)}
+          onDec={() => setBet((b) => Math.max(10, b - 10))}
         />
 
         {/* MENU MODAL */}
@@ -55,6 +40,7 @@ export default function PyramidSlot() {
           setSound={setSound}
           music={music}
           setMusic={setMusic}
+          setMenuOpen={setMenuOpen}
         />
       </div>
     </div>

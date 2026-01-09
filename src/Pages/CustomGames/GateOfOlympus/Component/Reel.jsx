@@ -25,7 +25,7 @@ export default function Reel({ symbols, delay, spinning }) {
        const startTimer = setTimeout(() => {
          setAnimate(true);
          // Generate random symbols for animation, then add final symbols
-         const randomSymbols = Array.from({ length: 20 }, getRandom);
+         const randomSymbols = Array.from({ length:25 }, getRandom);
          setDisplaySymbols([...randomSymbols, ...symbols]);
        }, delay);
 
@@ -42,7 +42,7 @@ export default function Reel({ symbols, delay, spinning }) {
    }, [spinning, delay, symbols]);
 
   return (
-    <div className="h-[320px] overflow-hidden bg-gradient-to-b from-purple-900 to-black  border-r-2 border-yellow-600 relative">
+    <div className="h-[380px] overflow-hidden bg-purbleDark  border-r-2 border-yellow-600 relative">
       <div
         className={`transition-transform ${
           animate ? "animate-spin-reel" : "animate-stop-reel"
@@ -57,7 +57,7 @@ export default function Reel({ symbols, delay, spinning }) {
         {displaySymbols.map((symbol, i) => (
           <div
             key={i}
-            className="h-[80px] flex items-center justify-center text-5xl"
+            className="h-[73px] flex items-center justify-center text-5xl"
           >
             {symbol}
           </div>
@@ -65,7 +65,7 @@ export default function Reel({ symbols, delay, spinning }) {
       </div>
 
       {/* Highlight middle row */}
-      <div className="absolute top-1/2 left-0 right-0 h-[80px] -translate-y-2/2 border-2 border-yellow-400 pointer-events-none"></div>
+      <div className="absolute top-1/2 left-0 right-0 h-[80px] -translate-y-1/2 border-2 border-yellow-400 pointer-events-none"></div>
     </div>
   );
 }

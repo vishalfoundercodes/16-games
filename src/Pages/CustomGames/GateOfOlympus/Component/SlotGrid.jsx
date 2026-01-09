@@ -3,7 +3,7 @@ import Reel from "./Reel";
 export default function SlotGrid({ reels, spinning }) {
   
   return (
-    <div className="mx-3 mt-4 bg-gradient-to-b from-purple-950 to-black p-4 rounded-xl border-4 border-yellow-500 shadow-2xl">
+    <div className="mx-3 mt-0 bg-gradient-to-b from-purbleDark to-purbleDark p-0 rounded-xl border-4 border-yellow-500 shadow-2xl">
       <div className="grid grid-cols-5 divide-x-2 divide-yellow-600">
         {reels.map((reel, index) => (
           <div
@@ -16,7 +16,7 @@ export default function SlotGrid({ reels, spinning }) {
               }
             `}
           >
-            <Reel symbols={reel} delay={index * 200} spinning={spinning}  />
+            <Reel symbols={reel} delay={index * 200} spinning={spinning} />
           </div>
         ))}
       </div>

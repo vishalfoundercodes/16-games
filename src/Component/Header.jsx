@@ -45,7 +45,7 @@ export default function Header() {
 
   return (
     <header className="bg-primary shadow-sm">
-      <div className="max-w-[500px] mx-auto px-3 py-2 flex items-center justify-between">
+      <div className="max-w-[500px] xsm:max-w-full mx-auto px-3 py-2 flex items-center justify-between">
         {/* Logo */}
         {/* <img src={gameLogo} alt="logo" className="h-10 object-contain" /> */}
         <Link to="/">

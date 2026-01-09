@@ -1,0 +1,341 @@
+.zeus-bg {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    to bottom,
+    #8f7ad8 0%,
+    #5a3d99 45%,
+    #2b174f 100%
+  );
+  animation: zeusGlow 6s ease-in-out infinite;
+  z-index: 0;
+}
+
+/* CLOUD LAYERS */
+.zeus-bg::before,
+.zeus-bg::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-repeat: repeat-x;
+  background-size: cover;
+  opacity: 0.6;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* FAR CLOUDS (slow) */
+.zeus-bg::before {
+  background-image: url("../../../../assets/GateOfOlympus/clouds-far.png");
+  animation: cloudMoveSlow 80s linear infinite;
+  opacity: 0.35;
+}
+
+/* NEAR CLOUDS (faster) */
+.zeus-bg::after {
+  background-image: url("../../../../assets/GateOfOlympus/clouds-near.png");
+  animation: cloudMoveFast 40s linear infinite;
+  opacity: 0.55;
+}
+
+@keyframes zeusGlow {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.15); }
+}
+
+@keyframes cloudMoveSlow {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -2000px 0;
+  }
+}
+
+@keyframes cloudMoveFast {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -4000px 0;
+  }
+}
+
+
+/* @keyframes skyMove {
+  0% { background-position: 50% 0%; }
+  50% { background-position: 50% 100%; }
+  100% { background-position: 50% 0%; }
+} */
+
+.top-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: linear-gradient(to bottom,#ffd56a,#c58a2e);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.6);
+  font-size: 20px;
+}
+
+.coin-bar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0,0,0,0.6);
+  border: 2px solid gold;
+  border-radius: 999px;
+  padding: 4px 12px;
+  color: gold;
+}
+
+.slot-frame {
+  background: #4a1f4f;
+  border: 6px solid gold;
+  border-radius: 16px;
+  padding: 12px;
+  box-shadow: 0 0 30px #f5c56b;
+}
+
+.status-text {
+  margin: 10px 0;
+  font-size: 22px;
+  color: gold;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px gold;
+}
+
+/* start-- */
+/* ===================== */
+/* CONTROL PANEL LAYOUT */
+/* ===================== */
+
+.control-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px;
+  margin: 10px auto;
+  max-width: 100%;
+}
+
+/* ⚡ BUTTON */
+.lightning-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  background: linear-gradient(to bottom, #ff5252, #b80000);
+  font-size: 24px;
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.3),
+    0 6px 12px rgba(0,0,0,0.6);
+}
+
+/* ===================== */
+/* BET PANEL */
+/* ===================== */
+
+.bet-panel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px;
+  border-radius: 14px;
+  background: linear-gradient(to bottom, #4b1d0c, #2a0e05);
+  box-shadow:
+    inset 0 2px 6px rgba(255,255,255,0.15),
+    0 6px 14px rgba(0,0,0,0.7);
+  flex: 1;
+  justify-content: center;
+}
+
+/* BUTTONS */
+.bet-btn {
+  min-width: 48px;
+  height: 44px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 13px;
+  border: 2px solid #ffdb6e;
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.4),
+    inset 0 -2px 4px rgba(0,0,0,0.4),
+    0 4px 10px rgba(0,0,0,0.7);
+}
+
+.bet-btn.gold {
+  background: linear-gradient(to bottom, #ffe36a, #ff9f1a);
+  color: #5a1d00;
+}
+
+.bet-btn.silver {
+  background: linear-gradient(to bottom, #f2f2f2, #9b9b9b);
+  color: #333;
+}
+
+/* BET CENTER */
+.bet-display {
+  min-width: 64px;
+  height: 44px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #2b0f06, #160703);
+  border: 2px solid #ffcc55;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    inset 0 2px 6px rgba(0,0,0,0.8),
+    0 4px 10px rgba(0,0,0,0.6);
+}
+
+.bet-label {
+  font-size: 10px;
+  color: #ffcc55;
+  font-weight: 700;
+}
+
+.bet-value {
+  font-size: 16px;
+  color: #ffd700;
+  font-weight: 900;
+}
+
+/* ===================== */
+/* START BUTTON */
+/* ===================== */
+
+.start-btn {
+  width: 78px;
+  height: 60px;
+  border-radius: 16px;
+  background: linear-gradient(to bottom, #2cff2c, #159d15);
+  font-size: 18px;
+  font-weight: 900;
+  color: #0b3d0b;
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.4),
+    0 6px 14px rgba(0,0,0,0.7);
+}
+
+/* ===================== */
+/* 📱 MOBILE (≤ 420px) */
+/* ===================== */
+
+@media (max-width: 420px) {
+  .control-panel {
+    gap: 6px;
+    padding: 6px;
+  }
+
+  .lightning-btn {
+    width: 44px;
+    height: 44px;
+    font-size: 20px;
+  }
+
+  .bet-btn {
+    min-width: 40px;
+    height: 38px;
+    font-size: 11px;
+  }
+
+  .bet-display {
+    min-width: 54px;
+    height: 38px;
+  }
+
+  .bet-value {
+    font-size: 14px;
+  }
+
+  .start-btn {
+    width: 64px;
+    height: 52px;
+    font-size: 14px;
+  }
+}
+
+/* --end */
+
+.zeus-glow {
+  filter: drop-shadow(0 0 25px rgba(120,180,255,0.8));
+}
+
+.bet-panel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 10px;
+  background: linear-gradient(to bottom, #4b1d0c, #2a0e05);
+  border-radius: 14px;
+  box-shadow:
+    inset 0 2px 6px rgba(255,255,255,0.15),
+    0 6px 14px rgba(0,0,0,0.7);
+}
+
+/* COMMON BUTTON */
+.bet-btn {
+  min-width: 54px;
+  height: 48px;
+  border-radius: 10px;
+  font-weight: 800;
+  font-size: 14px;
+  cursor: pointer;
+  border: 2px solid #ffdb6e;
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.4),
+    inset 0 -2px 4px rgba(0,0,0,0.4),
+    0 4px 10px rgba(0,0,0,0.7);
+}
+
+/* GOLD BUTTON */
+.bet-btn.gold {
+  background: linear-gradient(to bottom, #ffe36a, #ff9f1a);
+  color: #5a1d00;
+}
+
+/* SILVER (-) BUTTON */
+.bet-btn.silver {
+  background: linear-gradient(to bottom, #f2f2f2, #9b9b9b);
+  color: #333;
+  border-color: #e0e0e0;
+}
+
+/* BET CENTER */
+.bet-display {
+  min-width: 70px;
+  height: 48px;
+  border-radius: 10px;
+  background: linear-gradient(to bottom, #2b0f06, #160703);
+  border: 2px solid #ffcc55;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow:
+    inset 0 2px 6px rgba(0,0,0,0.8),
+    0 4px 10px rgba(0,0,0,0.6);
+}
+
+.bet-label {
+  font-size: 10px;
+  color: #ffcc55;
+  font-weight: 700;
+}
+
+.bet-value {
+  font-size: 18px;
+  color: #ffd700;
+  font-weight: 900;
+}
+
+
+@media (max-width: 480px) {
+  .top-icon {
+    width: 32px;
+    height: 32px;
+    font-size: 16px;
+  }
+}

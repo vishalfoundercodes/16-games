@@ -18,7 +18,7 @@ export default function useSlotMachine() {
 
 const getRandom = () => SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)];
   const [reels, setReels] = useState(
-    Array.from({ length: 5 }, () => Array.from({ length: 4 }, getRandom))
+    Array.from({ length: 5 }, () => Array.from({ length: 5 }, getRandom))
   );
   const [spinning, setSpinning] = useState(false);
   const [bet, setBet] = useState(100);
@@ -31,7 +31,7 @@ const getRandom = () => SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)];
     
     return resultIndices.map((targetIndex) => {
       // Create a reel with the target symbol in position 1 (second row)
-      const reel = Array.from({ length: 4 }, getRandom);
+      const reel = Array.from({ length: 5 }, getRandom);
       reel[1] = SYMBOLS[targetIndex]; // Place desired symbol in second row
       return reel;
     });

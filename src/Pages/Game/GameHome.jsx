@@ -53,7 +53,7 @@ const games = [
   {
     id: 15,
     name: "gate_of_olympus",
-    route: "gate",
+    route: "goo",
     logo: GateofOlimposLogo,
   },
   { id: 16, name: "yummy", route: "yummy", logo: YummyLogo },
@@ -67,10 +67,10 @@ export default function GameHome() {
   return (
     <div className="pb-4">
       {/* Title */}
-      <h2 className="text-white text-lg font-semibold mb-4">🎮 Games</h2>
+      <h2 className="text-white text-lg font-semibold mb-1 p-4">🎮 Games</h2>
 
       {/* Grid */}
-      <div className="grid grid-cols-2 gap-4">
+      <div className="grid grid-cols-2 xsm:grid-cols-4 gap-4 px-4">
         {games.map((game) => (
           <div
             key={game.id}
@@ -87,7 +87,9 @@ export default function GameHome() {
             </div>
 
             {/* Name */}
-            <p className="text-xs text-center text-gray-200">{t(`${game.name}`)}</p>
+            <p className="text-xs text-center text-gray-200">
+              {t(`${game.name}`)}
+            </p>
           </div>
         ))}
       </div>
