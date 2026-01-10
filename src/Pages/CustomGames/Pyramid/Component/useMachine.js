@@ -1,15 +1,24 @@
 import { useState } from "react";
+import AImage from "../../../../assets/Pyramid_Slot/a.png";
+import TwoImage from "../../../../assets/Pyramid_Slot/2x.png";
+import JImage from "../../../../assets/Pyramid_Slot/j.png";
+import QImage from "../../../../assets/Pyramid_Slot/q.png";
+import WildImage from "../../../../assets/Pyramid_Slot/wild.png";
+import MamyImage from "../../../../assets/Pyramid_Slot/pyramid-mamy.png";
+import CatImage from "../../../../assets/Pyramid_Slot/cat.png";
+import RollImage from "../../../../assets/Pyramid_Slot/roll.png";
+import KImage from "../../../../assets/Pyramid_Slot/k.png";
 // import { SYMBOLS } from "./data";
 const SYMBOLS = [
-  "🔱", // anubis
-  "👑", // pharaoh
-  "⭐", // wild
-  "🔶", // q
-  "💎", // k
-  "🏺", // a
-  "🎲", // j
-  "✖️", // x2
-  "📜", // scroll
+  TwoImage, // pharaoh
+  WildImage, // wild
+  QImage, // q
+  MamyImage, // k
+  AImage, // a
+  JImage, // j
+  CatImage, // scroll
+  KImage,
+  RollImage,
 ];
 
 

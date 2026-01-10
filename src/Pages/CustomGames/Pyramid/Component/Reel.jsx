@@ -1,16 +1,25 @@
 import React, { useState, useEffect } from "react";
-
-// Assets
+import BgImage from "../../../../assets/Pyramid_Slot/games-section.png";
+import AImage from "../../../../assets/Pyramid_Slot/a.png";
+import TwoImage from "../../../../assets/Pyramid_Slot/2x.png";
+import JImage from "../../../../assets/Pyramid_Slot/j.png";
+import QImage from "../../../../assets/Pyramid_Slot/q.png";
+import WildImage from "../../../../assets/Pyramid_Slot/wild.png";
+import MamyImage from "../../../../assets/Pyramid_Slot/pyramid-mamy.png";
+import CatImage from "../../../../assets/Pyramid_Slot/cat.png";
+import RollImage from "../../../../assets/Pyramid_Slot/roll.png";
+import KImage from "../../../../assets/Pyramid_Slot/k.png";
+// import { SYMBOLS } from "./data";
 const SYMBOLS = [
-  "🔱", // anubis
-  "👑", // pharaoh
-  "⭐", // wild
-  "🔶", // q
-  "💎", // k
-  "🏺", // a
-  "🎲", // j
-  "✖️", // x2
-  "📜", // scroll
+  TwoImage, // pharaoh
+  WildImage, // wild
+  QImage, // q
+  MamyImage, // k
+  AImage, // a
+  JImage, // j
+  CatImage, // scroll
+  KImage,
+  RollImage,
 ];
 
 const getRandom = () => SYMBOLS[Math.floor(Math.random() * SYMBOLS.length)];
@@ -42,7 +51,7 @@ export default function Reel({ symbols, delay, spinning }) {
    }, [spinning, delay, symbols]);
 
   return (
-    <div className="h-[320px] overflow-hidden bg-gradient-to-b from-purple-900 to-black  border-r-2 border-yellow-600 relative">
+    <div className="h-[320px] overflow-hidden bg-gradient-to-b from-purple-900 to-black  border-r-2 border-yellow-600 relative ">
       <div
         className={`transition-transform ${
           animate ? "animate-spin-reel" : "animate-stop-reel"
@@ -59,7 +68,8 @@ export default function Reel({ symbols, delay, spinning }) {
             key={i}
             className="h-[80px] flex items-center justify-center text-5xl"
           >
-            {symbol}
+            {/* {symbol} */}
+            <img src={symbol} alt="" className="p-1 xsm3:p-4" />
           </div>
         ))}
       </div>

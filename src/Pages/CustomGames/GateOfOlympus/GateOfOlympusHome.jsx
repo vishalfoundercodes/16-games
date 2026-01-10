@@ -31,7 +31,7 @@ export default function GateOfOlympusHome() {
         <SlotGrid reels={reels} spinning={spinning} />
         {/* </div> */}
 
-        <StatusText />
+        {/* <StatusText /> */}
 
         {/* Controls */}
         <ControlPanel

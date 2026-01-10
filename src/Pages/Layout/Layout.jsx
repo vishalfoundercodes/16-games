@@ -13,7 +13,7 @@ export default function Layout() {
         </div>
 
         {/* Page Content */}
-        <main className="py-10 pb-[80px] xsm:p-0 xsm:py-10 h-screen overflow-y-auto bg-black">
+        <main className="py-1 pb-28 xsm:p-0 xsm:pt-10 xsm:pb-0 overflow-y-auto bg-black">
           <Outlet />
         </main>
 
